@@ -35,7 +35,7 @@
         make.left.equalTo(self).offset(10);
         make.height.equalTo(self).multipliedBy(0.5);
         make.centerY.equalTo(self);
-        make.width.equalTo(@5);
+        make.width.equalTo(@4);
     }];
     
     [self addSubview:self.info];
@@ -57,7 +57,7 @@
 - (UILabel *)info {
     if (_info == nil) {
         _info = [[UILabel alloc]init];
-        _info.numberOfLines = 0;
+        _info.font = [UIFont systemFontOfSize:12 weight:1];
     }
     return _info;
 }
