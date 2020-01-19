@@ -46,7 +46,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0474F30C23D1922C00B34D2F /* DynamicInputView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DynamicInputView.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		0474F30C23D1922C00B34D2F /* GHDynamicInputView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GHDynamicInputView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0474F30F23D1922C00B34D2F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		0474F31023D1922C00B34D2F /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		0474F31523D1922C00B34D2F /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
@@ -134,7 +134,7 @@
 		0474F30D23D1922C00B34D2F /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				0474F30C23D1922C00B34D2F /* DynamicInputView.app */,
+				0474F30C23D1922C00B34D2F /* GHDynamicInputView.app */,
 				0474F32723D1923100B34D2F /* DynamicInputViewTests.xctest */,
 				0474F33223D1923100B34D2F /* DynamicInputViewUITests.xctest */,
 			);
@@ -273,7 +273,7 @@
 			);
 			name = DynamicInputView;
 			productName = DynamicInputView;
-			productReference = 0474F30C23D1922C00B34D2F /* DynamicInputView.app */;
+			productReference = 0474F30C23D1922C00B34D2F /* GHDynamicInputView.app */;
 			productType = "com.apple.product-type.application";
 		};
 		0474F32623D1923100B34D2F /* DynamicInputViewTests */ = {
@@ -683,9 +683,9 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = GHome.DynamicInputView;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = GHDynamicInputView;
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -705,9 +705,9 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = GHome.DynamicInputView;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = GHDynamicInputView;
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
