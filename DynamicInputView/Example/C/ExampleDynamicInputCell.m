@@ -50,6 +50,7 @@
         _dynamicInputView.layer.masksToBounds = YES;
         _dynamicInputView.layer.cornerRadius = 5;
         _dynamicInputView.imageName = @"delete";
+        _dynamicInputView.placeholder = @"请输入内容";
     }
     return _dynamicInputView;
 }

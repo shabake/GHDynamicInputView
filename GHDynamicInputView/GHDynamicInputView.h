@@ -46,6 +46,11 @@ typedef void (^GHDynamicInputViewGetHeightBlock)(float height ,NSString *text);
  */
 @property (nonatomic , copy) NSString *inputText;
 
+/**
+ *  占位内容
+ */
+@property (nonatomic , copy) NSString *placeholder;
+
 @end
 
 

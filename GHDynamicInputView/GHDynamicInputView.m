@@ -25,12 +25,16 @@
 /**
  *  占位
  */
-@property (nonatomic , strong) UITextView *placeholder;
+@property (nonatomic , strong) UILabel *placeholderView;
 @end
 
 @implementation GHDynamicInputView
 
 #pragma mark - set
+- (void)setPlaceholder:(NSString *)placeholder {
+    self.placeholderView.text = placeholder;
+}
+
 - (void)setFont:(UIFont *)font {
     self.textView.font = font;
 }
@@ -72,6 +76,7 @@
 
 - (void)setupUI {
     [self addSubview:self.textView];
+    [self.textView addSubview:self.placeholderView];
     [self addSubview:self.delete];
 }
 
@@ -82,12 +87,13 @@
                                      self.isEditing ? width - 15 - 10:
                                      width,
                                      self.bounds.size.height);
+    self.placeholderView.frame = CGRectMake(4, 0, self.textView.frame.size.width - 4, self.textView.frame.size.height);
     self.delete.frame = CGRectMake(width - 15 - 10, CGRectGetMaxY(self.textView.frame) - 15 - 10, 15, 15);
 }
 
 #pragma mark - UITextViewDelegate
 - (BOOL)textViewShouldBeginEditing:(UITextView *)textView {
-
+    self.placeholderView.hidden = YES;
     CGRect frame = textView.frame;
     CGFloat width = self.bounds.size.width;
     self.isEditing = YES;
@@ -105,6 +111,11 @@
 }
 
 - (BOOL)textViewShouldEndEditing:(UITextView *)textView{
+    if (textView.text.length) {
+        self.placeholderView.hidden = YES;
+    } else {
+        self.placeholderView.hidden = NO;
+    }
     CGRect frame = textView.frame;
     self.isEditing = NO;
     self.delete.hidden = YES;
@@ -173,18 +184,16 @@
 
 #pragma mark - lazy
 
-- (UITextView *)placeholder {
-    if (_placeholder == nil) {
-        _placeholder = [[UITextView alloc]init];
-        _placeholder.backgroundColor = [UIColor redColor];
-        _placeholder.delegate = self;
-        _placeholder.font = self.font;
-        _placeholder.showsVerticalScrollIndicator = NO;
-        _placeholder.textContainerInset = UIEdgeInsetsMake(10,0, 0, 0);
-        _placeholder.text = @"请输入";
-        _placeholder.textColor = [UIColor lightGrayColor];
+- (UILabel *)placeholderView {
+    if (_placeholderView == nil) {
+        _placeholderView = [[UILabel alloc]init];
+        _placeholderView.backgroundColor = [UIColor clearColor];
+        _placeholderView.font = [UIFont systemFontOfSize:14];
+        _placeholderView.text = @"请输入内容0";
+        _placeholderView.textAlignment = NSTextAlignmentLeft;
+        _placeholderView.textColor = [UIColor lightGrayColor];
     }
-    return _placeholder;
+    return _placeholderView;
 }
 
 - (UITextView *)textView {
