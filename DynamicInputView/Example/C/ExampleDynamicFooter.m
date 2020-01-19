@@ -1,19 +1,23 @@
 //
-//  ExampleDynamicFooter.m
+//  ExampleDynamicInputInfoHeader.m
 //  DynamicInputView
 //
-//  Created by mac on 2020/1/19.
+//  Created by mac on 2020/1/18.
 //  Copyright © 2020 GHome. All rights reserved.
 //
 
 #import "ExampleDynamicFooter.h"
 
-@interface ExampleDynamicFooter ()
+@interface ExampleDynamicFooter()
 
-@property (nonatomic , strong) UIButton *sure;
+@property (nonatomic , strong) UILabel *info;
 @end
+
 @implementation ExampleDynamicFooter
 
+- (void)setText:(NSString *)text {
+    self.info.text = text;
+}
 
 - (instancetype)initWithFrame:(CGRect)frame {
     if (self == [super initWithFrame:frame]) {
@@ -24,30 +28,21 @@
 }
 
 - (void)setupUI {
-    [self addSubview:self.sure];
-    [self.sure mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.top.equalTo(self).offset(10);
-        make.right.bottom.equalTo(self).offset(-10);
+    [self addSubview:self.info];
+    [self.info mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(self).offset(10);
+        make.right.equalTo(self).offset(-10);
+        make.top.equalTo(self).offset(10);
     }];
 }
 
-- (void)clickSure {
-    if (self.didClickSureBlock) {
-        self.didClickSureBlock();
+- (UILabel *)info {
+    if (_info == nil) {
+        _info = [[UILabel alloc]init];
+        _info.numberOfLines = 0;
+        _info.font = [UIFont systemFontOfSize:14];
     }
-}
-
-- (UIButton *)sure {
-    if (_sure == nil) {
-        _sure = [[UIButton alloc]init];
-        _sure.backgroundColor = [UIColor blueColor];
-        [_sure setTitle:@"确定" forState:UIControlStateNormal];
-        [_sure setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-        _sure.layer.masksToBounds = YES;
-        [_sure addTarget:self action:@selector(clickSure) forControlEvents:UIControlEventTouchUpInside];
-        _sure.layer.cornerRadius = 10;
-    }
-    return _sure;
+    return _info;
 }
 
 @end

@@ -3,8 +3,8 @@ platform :ios, '9.0'
 
 inhibit_all_warnings!
 
-
 pod 'Masonry', '1.0.0'
+pod 'IQKeyboardManager', '6.5.4'
 
 target 'DynamicInputView' do
   # Comment the next line if you don't want to use dynamic frameworks

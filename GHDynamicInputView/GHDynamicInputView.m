@@ -22,6 +22,10 @@
 
 @property (nonatomic , assign) BOOL isEditing;
 
+/**
+ *  占位
+ */
+@property (nonatomic , strong) UITextView *placeholder;
 @end
 
 @implementation GHDynamicInputView
@@ -83,6 +87,7 @@
 
 #pragma mark - UITextViewDelegate
 - (BOOL)textViewShouldBeginEditing:(UITextView *)textView {
+
     CGRect frame = textView.frame;
     CGFloat width = self.bounds.size.width;
     self.isEditing = YES;
@@ -124,7 +129,7 @@
         } else{
             height = [self _heightForTextView:textView text:textView.text width:0];
         }
-    }else{
+    } else{
         height = [self _heightForTextView:textView text:[NSString stringWithFormat:@"%@%@",textView.text,text] width:0];
     }
     frame.size.height = height;
@@ -154,7 +159,7 @@
     CGRect size = [text boundingRectWithSize:constraint                                        options:(NSStringDrawingUsesLineFragmentOrigin|NSStringDrawingUsesFontLeading)
                                   attributes:@{NSFontAttributeName:self.textView.font}
                                      context:nil];
-    float textHeight = size.size.height + 20.0;
+    float textHeight = size.size.height + 22.0;
     return textHeight;
 }
 
@@ -167,6 +172,20 @@
 }
 
 #pragma mark - lazy
+
+- (UITextView *)placeholder {
+    if (_placeholder == nil) {
+        _placeholder = [[UITextView alloc]init];
+        _placeholder.backgroundColor = [UIColor redColor];
+        _placeholder.delegate = self;
+        _placeholder.font = self.font;
+        _placeholder.showsVerticalScrollIndicator = NO;
+        _placeholder.textContainerInset = UIEdgeInsetsMake(10,0, 0, 0);
+        _placeholder.text = @"请输入";
+        _placeholder.textColor = [UIColor lightGrayColor];
+    }
+    return _placeholder;
+}
 
 - (UITextView *)textView {
     if (_textView == nil) {

@@ -19,9 +19,10 @@
 		0474F34E23D1D24C00B34D2F /* ExampleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0474F34D23D1D24C00B34D2F /* ExampleViewController.m */; };
 		0474F35123D1D30800B34D2F /* ExampleDynamicInputCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0474F35023D1D30800B34D2F /* ExampleDynamicInputCell.m */; };
 		0474F35523D2363200B34D2F /* ExampleDynamicInputInfoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0474F35423D2363200B34D2F /* ExampleDynamicInputInfoView.m */; };
-		0474F35823D237CC00B34D2F /* ExampleDynamicInputInfoHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 0474F35723D237CC00B34D2F /* ExampleDynamicInputInfoHeader.m */; };
+		0474F35823D237CC00B34D2F /* ExampleDynamicFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = 0474F35723D237CC00B34D2F /* ExampleDynamicFooter.m */; };
 		0474F35B23D2A4B100B34D2F /* NSString+GHome.m in Sources */ = {isa = PBXBuildFile; fileRef = 0474F35A23D2A4B100B34D2F /* NSString+GHome.m */; };
-		0474F35E23D4175700B34D2F /* ExampleDynamicFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = 0474F35D23D4175700B34D2F /* ExampleDynamicFooter.m */; };
+		0474F35E23D4175700B34D2F /* ExampleDynamicSectionFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = 0474F35D23D4175700B34D2F /* ExampleDynamicSectionFooter.m */; };
+		0479758623D4222000012E3E /* ExampleDynamicHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 0479758523D4222000012E3E /* ExampleDynamicHeader.m */; };
 		5B66068CA7D0F3DF1E901BF8 /* Pods_DynamicInputViewTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F859F7354205971AEA1840C /* Pods_DynamicInputViewTests.framework */; };
 		85D51CBE35FA17F8981EF4B3 /* Pods_DynamicInputView_DynamicInputViewUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C87984262B65F623431541B0 /* Pods_DynamicInputView_DynamicInputViewUITests.framework */; };
 		A6CF09A97137A6A165590552 /* Pods_DynamicInputView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB64EE29D1FEE80FA5726C92 /* Pods_DynamicInputView.framework */; };
@@ -70,12 +71,14 @@
 		0474F35223D2351800B34D2F /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		0474F35323D2363200B34D2F /* ExampleDynamicInputInfoView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ExampleDynamicInputInfoView.h; sourceTree = "<group>"; };
 		0474F35423D2363200B34D2F /* ExampleDynamicInputInfoView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ExampleDynamicInputInfoView.m; sourceTree = "<group>"; };
-		0474F35623D237CC00B34D2F /* ExampleDynamicInputInfoHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ExampleDynamicInputInfoHeader.h; sourceTree = "<group>"; };
-		0474F35723D237CC00B34D2F /* ExampleDynamicInputInfoHeader.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ExampleDynamicInputInfoHeader.m; sourceTree = "<group>"; };
+		0474F35623D237CC00B34D2F /* ExampleDynamicFooter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ExampleDynamicFooter.h; sourceTree = "<group>"; };
+		0474F35723D237CC00B34D2F /* ExampleDynamicFooter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ExampleDynamicFooter.m; sourceTree = "<group>"; };
 		0474F35923D2A4B100B34D2F /* NSString+GHome.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+GHome.h"; sourceTree = "<group>"; };
 		0474F35A23D2A4B100B34D2F /* NSString+GHome.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSString+GHome.m"; sourceTree = "<group>"; };
-		0474F35C23D4175700B34D2F /* ExampleDynamicFooter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ExampleDynamicFooter.h; sourceTree = "<group>"; };
-		0474F35D23D4175700B34D2F /* ExampleDynamicFooter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ExampleDynamicFooter.m; sourceTree = "<group>"; };
+		0474F35C23D4175700B34D2F /* ExampleDynamicSectionFooter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ExampleDynamicSectionFooter.h; sourceTree = "<group>"; };
+		0474F35D23D4175700B34D2F /* ExampleDynamicSectionFooter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ExampleDynamicSectionFooter.m; sourceTree = "<group>"; };
+		0479758423D4222000012E3E /* ExampleDynamicHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ExampleDynamicHeader.h; sourceTree = "<group>"; };
+		0479758523D4222000012E3E /* ExampleDynamicHeader.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ExampleDynamicHeader.m; sourceTree = "<group>"; };
 		21694DA113C481C5091CFE72 /* Pods-DynamicInputViewTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DynamicInputViewTests.debug.xcconfig"; path = "Target Support Files/Pods-DynamicInputViewTests/Pods-DynamicInputViewTests.debug.xcconfig"; sourceTree = "<group>"; };
 		7F859F7354205971AEA1840C /* Pods_DynamicInputViewTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DynamicInputViewTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A096BA7AAC3416E06488A346 /* Pods-DynamicInputView.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DynamicInputView.release.xcconfig"; path = "Target Support Files/Pods-DynamicInputView/Pods-DynamicInputView.release.xcconfig"; sourceTree = "<group>"; };
@@ -211,10 +214,12 @@
 				0474F35023D1D30800B34D2F /* ExampleDynamicInputCell.m */,
 				0474F35323D2363200B34D2F /* ExampleDynamicInputInfoView.h */,
 				0474F35423D2363200B34D2F /* ExampleDynamicInputInfoView.m */,
-				0474F35623D237CC00B34D2F /* ExampleDynamicInputInfoHeader.h */,
-				0474F35723D237CC00B34D2F /* ExampleDynamicInputInfoHeader.m */,
-				0474F35C23D4175700B34D2F /* ExampleDynamicFooter.h */,
-				0474F35D23D4175700B34D2F /* ExampleDynamicFooter.m */,
+				0474F35623D237CC00B34D2F /* ExampleDynamicFooter.h */,
+				0474F35723D237CC00B34D2F /* ExampleDynamicFooter.m */,
+				0479758423D4222000012E3E /* ExampleDynamicHeader.h */,
+				0479758523D4222000012E3E /* ExampleDynamicHeader.m */,
+				0474F35C23D4175700B34D2F /* ExampleDynamicSectionFooter.h */,
+				0474F35D23D4175700B34D2F /* ExampleDynamicSectionFooter.m */,
 			);
 			path = C;
 			sourceTree = "<group>";
@@ -487,14 +492,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0474F35823D237CC00B34D2F /* ExampleDynamicInputInfoHeader.m in Sources */,
+				0479758623D4222000012E3E /* ExampleDynamicHeader.m in Sources */,
+				0474F35823D237CC00B34D2F /* ExampleDynamicFooter.m in Sources */,
 				0474F31723D1922C00B34D2F /* ViewController.m in Sources */,
 				0474F31123D1922C00B34D2F /* AppDelegate.m in Sources */,
 				0474F35523D2363200B34D2F /* ExampleDynamicInputInfoView.m in Sources */,
 				0474F35B23D2A4B100B34D2F /* NSString+GHome.m in Sources */,
 				0474F34E23D1D24C00B34D2F /* ExampleViewController.m in Sources */,
 				0474F35123D1D30800B34D2F /* ExampleDynamicInputCell.m in Sources */,
-				0474F35E23D4175700B34D2F /* ExampleDynamicFooter.m in Sources */,
+				0474F35E23D4175700B34D2F /* ExampleDynamicSectionFooter.m in Sources */,
 				0474F34723D1939A00B34D2F /* GHDynamicInputView.m in Sources */,
 				0474F32223D1923100B34D2F /* main.m in Sources */,
 			);

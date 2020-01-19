@@ -9,14 +9,16 @@
 #import "ExampleViewController.h"
 #import "ExampleDynamicInputCell.h"
 #import "ExampleDynamicInputInfoView.h"
-#import "ExampleDynamicInputInfoHeader.h"
 #import "ExampleDynamicFooter.h"
+#import "ExampleDynamicSectionFooter.h"
+#import "ExampleDynamicHeader.h"
 
 @interface ExampleViewController ()<UITableViewDelegate,UITableViewDataSource>
 
 @property (nonatomic , strong) UITableView *tableView;
 @property (nonatomic , assign) float height;
-@property (nonatomic , strong) ExampleDynamicInputInfoHeader *header;
+@property (nonatomic , strong) ExampleDynamicFooter *footer;
+@property (nonatomic , strong) ExampleDynamicHeader *header;
 
 @end
 
@@ -31,6 +33,7 @@
 - (void)setupUI {
     [self.view addSubview:self.tableView];
     self.tableView.tableHeaderView = self.header;
+    self.tableView.tableFooterView = self.footer;
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
@@ -50,7 +53,7 @@
 }
 
 - (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section {
-    ExampleDynamicFooter *view = [[ExampleDynamicFooter alloc]init];
+    ExampleDynamicSectionFooter *view = [[ExampleDynamicSectionFooter alloc]init];
     weakself(self);
     view.didClickSureBlock = ^{
         [weakSelf.view endEditing:YES];
@@ -76,7 +79,7 @@
     weakself(self);
     cell.getHeightBlock = ^(float height, NSString * _Nonnull text) {
         weakSelf.height = height;
-        weakSelf.header.text = text;
+        weakSelf.footer.text = text;
         [weakSelf getLastFrameWithString:text];
         [weakSelf.tableView beginUpdates];
         [weakSelf.tableView endUpdates];
@@ -85,11 +88,11 @@
 }
 
 - (void)getLastFrameWithString:(NSString *)string {
-    CGRect frame = self.header.frame;
+    CGRect frame = self.footer.frame;
     CGSize headerSize = [NSString sizeWithText:string andFont:[UIFont systemFontOfSize:14] andMaxSize:CGSizeMake(kScreenWidth - 20, CGFLOAT_MAX)];
     frame.size.height = headerSize.height + 20;
     [UIView animateWithDuration:0.25 animations:^{
-        self.header.frame = frame;
+        self.footer.frame = frame;
     }];
 }
 
@@ -106,11 +109,18 @@
     return _tableView;
 }
 
-- (ExampleDynamicInputInfoHeader *)header {
+- (ExampleDynamicHeader *)header {
     if (_header == nil) {
-        _header = [[ExampleDynamicInputInfoHeader alloc]initWithFrame:CGRectMake(0, 0, 0, 100)];
+        _header = [[ExampleDynamicHeader alloc]initWithFrame:CGRectMake(0, 0, 0, 90.01)];
     }
     return _header;
+}
+
+- (ExampleDynamicFooter *)footer {
+    if (_footer == nil) {
+        _footer = [[ExampleDynamicFooter alloc]initWithFrame:CGRectMake(0, 0, 0, 60.01)];
+    }
+    return _footer;
 }
 
 @end

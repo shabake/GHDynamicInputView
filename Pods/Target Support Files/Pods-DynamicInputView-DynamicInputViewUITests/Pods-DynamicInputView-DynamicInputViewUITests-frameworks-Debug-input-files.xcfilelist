@@ -1,2 +1,3 @@
 ${PODS_ROOT}/Target Support Files/Pods-DynamicInputView-DynamicInputViewUITests/Pods-DynamicInputView-DynamicInputViewUITests-frameworks.sh
+${BUILT_PRODUCTS_DIR}/IQKeyboardManager-framework/IQKeyboardManager.framework
 ${BUILT_PRODUCTS_DIR}/Masonry-framework/Masonry.framework

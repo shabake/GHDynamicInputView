@@ -21,4 +21,18 @@
 #define kScreenHeight [UIScreen mainScreen].bounds.size.height
 #define weakself(self) __weak __typeof(self) weakSelf = self
 
+#define UIColorFromRGB(rgbValue)        UIColorFromRGBA(rgbValue,1.0)
+
+#define UIColorFromRGBA(rgbValue,a)        [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 green:((float)((rgbValue & 0xFF00) >> 8))/255.0 blue:((float)(rgbValue & 0xFF))/255.0 alpha:a]
+
+#ifdef DEBUG
+#define NSLog(format, ...) printf("%s\n", [[NSString stringWithFormat:(format), ##__VA_ARGS__] UTF8String]);
+#else
+#define NSLog(...) {}
+#endif
+
+#define KAlert(title,msg) [[[UIAlertView alloc] initWithTitle:title message:msg delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil] show]
+
+#define KMainColor UIColorFromRGB(0x017fff)
+
 #endif /* PrefixHeader_pch */
