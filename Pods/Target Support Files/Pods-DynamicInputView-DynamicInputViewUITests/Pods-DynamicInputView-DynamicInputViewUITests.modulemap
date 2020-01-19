@@ -1,0 +1,6 @@
+framework module Pods_DynamicInputView_DynamicInputViewUITests {
+  umbrella header "Pods-DynamicInputView-DynamicInputViewUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}

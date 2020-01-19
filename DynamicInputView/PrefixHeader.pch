@@ -1,0 +1,24 @@
+//
+//  PrefixHeader.pch
+//  DynamicInputView
+//
+//  Created by mac on 2020/1/18.
+//  Copyright © 2020 GHome. All rights reserved.
+//
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+
+#import "Masonry.h"
+#import "NSString+GHome.h"
+
+#define kISIphoneX [UIScreen mainScreen].bounds.size.height >= 812.0f
+#define kSafeStatusHeight ((kISIphoneX) ? 44 : 20)
+#define kSafeNavHeight   ((kISIphoneX) ? 88 : 64)
+#define kSafeTabbarHeight ((kISIphoneX) ? 83 : 49)
+#define kSafeBottomHeight ((kISIphoneX) ? 34 : 0)
+#define kScreenWidth [UIScreen mainScreen].bounds.size.width
+#define kScreenHeight [UIScreen mainScreen].bounds.size.height
+#define weakself(self) __weak __typeof(self) weakSelf = self
+
+#endif /* PrefixHeader_pch */
