@@ -7,6 +7,7 @@
 //
 
 #import "GHDynamicInputView.h"
+#import "GHLabel.h"
 
 @interface GHDynamicInputView()<UITextViewDelegate>
 
@@ -25,7 +26,7 @@
 /**
  *  占位
  */
-@property (nonatomic , strong) UILabel *placeholderView;
+@property (nonatomic , strong) GHLabel *placeholderView;
 @end
 
 @implementation GHDynamicInputView
@@ -83,12 +84,12 @@
 #pragma mark - layoutSubviews
 - (void)layoutSubviews {
     CGFloat width = self.bounds.size.width;
-    self.textView.frame = CGRectMake(0, 0,
+    self.textView.frame = CGRectMake(0, 10,
                                      self.isEditing ? width - 15 - 10:
                                      width,
                                      self.bounds.size.height);
-    self.placeholderView.frame = CGRectMake(4, 0, self.textView.frame.size.width - 4, self.textView.frame.size.height);
-    self.delete.frame = CGRectMake(width - 15 - 10, CGRectGetMaxY(self.textView.frame) - 15 - 10, 15, 15);
+    self.placeholderView.frame = CGRectMake(3, 0, self.textView.frame.size.width - 6, self.textView.frame.size.height);
+    self.delete.frame = CGRectMake(width - 15 - 10, CGRectGetMaxY(self.textView.frame) - 15 - 20, 15, 15);
 }
 
 #pragma mark - UITextViewDelegate
@@ -170,7 +171,7 @@
     CGRect size = [text boundingRectWithSize:constraint                                        options:(NSStringDrawingUsesLineFragmentOrigin|NSStringDrawingUsesFontLeading)
                                   attributes:@{NSFontAttributeName:self.textView.font}
                                      context:nil];
-    float textHeight = size.size.height + 22.0;
+    float textHeight = size.size.height + 20.0;
     return textHeight;
 }
 
@@ -184,14 +185,15 @@
 
 #pragma mark - lazy
 
-- (UILabel *)placeholderView {
+- (GHLabel *)placeholderView {
     if (_placeholderView == nil) {
-        _placeholderView = [[UILabel alloc]init];
+        _placeholderView = [[GHLabel alloc]init];
         _placeholderView.backgroundColor = [UIColor clearColor];
-        _placeholderView.font = [UIFont systemFontOfSize:14];
-        _placeholderView.text = @"请输入内容0";
-        _placeholderView.textAlignment = NSTextAlignmentLeft;
+        _placeholderView.font = self.textView.font;
+        _placeholderView.text = @"请输入内容";
+        _placeholderView.textAlignment = NSTextAlignmentNatural;
         _placeholderView.textColor = [UIColor lightGrayColor];
+        _placeholderView.verticalAlignment = VerticalAlignmentTop;
     }
     return _placeholderView;
 }
@@ -203,7 +205,7 @@
         _textView.delegate = self;
         _textView.font = self.font;
         _textView.showsVerticalScrollIndicator = NO;
-        _textView.textContainerInset = UIEdgeInsetsMake(10,0, 0, 0);
+        _textView.textContainerInset = UIEdgeInsetsMake(0,0, 0, 0);
         _textView.text = @"";
         _textView.textColor = [UIColor lightGrayColor];
     }
