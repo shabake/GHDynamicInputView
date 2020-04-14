@@ -10,8 +10,8 @@
 
 @interface GHLabel()
 
-
 @end
+
 @implementation GHLabel
 
 @synthesize verticalAlignment = verticalAlignment_;
